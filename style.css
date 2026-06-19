@@ -1,0 +1,267 @@
+/* ===== Variables (2025 palette: Mocha Mousse, Ethereal Blue, Moonlit Grey) ===== */
+:root {
+  --mocha: #A5856F;
+  --blue: #A0D4E0;
+  --grey: #F2F0EA;
+  --dark: #2E2A26;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Roboto", "Open Sans", Arial, sans-serif;
+  background: var(--grey);
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: "Inter", "Montserrat", Arial, sans-serif;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: var(--mocha);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand h1 {
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: block;
+}
+
+.nav-list {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--mocha);
+  width: 100%;
+  padding: 1rem;
+}
+
+.nav-list.open {
+  display: flex;
+}
+
+.nav-list a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  padding: 0.4rem 0;
+}
+
+.nav-list a.active {
+  border-bottom: 2px solid var(--blue);
+}
+
+/* ===== Main layout ===== */
+main {
+  padding: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  color: var(--mocha);
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.filter-group select {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  background: var(--white);
+  min-width: 160px;
+}
+
+/* Cards - mobile first: single column */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.card-value {
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 700;
+  color: var(--mocha);
+}
+
+/* Panel / region bars */
+.panel {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+}
+
+.bars { margin-top: 1rem; }
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.bar-label {
+  width: 70px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.bar-track {
+  flex: 1;
+  background: var(--grey);
+  border-radius: 6px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  background: var(--blue);
+  height: 100%;
+  border-radius: 6px;
+}
+
+.bar-amount {
+  font-size: 0.8rem;
+  width: 90px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--grey);
+  white-space: nowrap;
+}
+
+th {
+  background: var(--mocha);
+  color: var(--white);
+}
+
+tbody tr:hover {
+  background: var(--grey);
+}
+
+/* About */
+.about-section p {
+  background: var(--white);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1.25rem;
+  background: var(--dark);
+  color: var(--white);
+  font-size: 0.85rem;
+}
+
+/* ===== Tablet (min-width 768px) ===== */
+@media (min-width: 768px) {
+  .nav-toggle { display: none; }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: transparent;
+    width: auto;
+    padding: 0;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Desktop (min-width 1024px) ===== */
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

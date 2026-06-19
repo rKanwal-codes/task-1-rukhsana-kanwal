@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Insights | DecodeLabs Internship Project 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo">📊</span>
+      <h1>SalesScope</h1>
+    </div>
+    <nav class="main-nav" id="main-nav">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-list" id="navList">
+        <li><a href="#dashboard" class="active">Dashboard</a></li>
+        <li><a href="#table">Orders</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="dashboard" class="dashboard">
+      <h2>Sales Overview</h2>
+
+      <div class="filters">
+        <div class="filter-group">
+          <label for="regionFilter">Region</label>
+          <select id="regionFilter">
+            <option value="all">All Regions</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="productFilter">Product</label>
+          <select id="productFilter">
+            <option value="all">All Products</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cards-grid" id="cardsGrid">
+        <article class="card">
+          <h3>Total Revenue</h3>
+          <p class="card-value" id="totalRevenue">$0</p>
+        </article>
+        <article class="card">
+          <h3>Total Orders</h3>
+          <p class="card-value" id="totalOrders">0</p>
+        </article>
+        <article class="card">
+          <h3>Total Quantity Sold</h3>
+          <p class="card-value" id="totalQuantity">0</p>
+        </article>
+        <article class="card">
+          <h3>Returned Orders</h3>
+          <p class="card-value" id="totalReturned">0</p>
+        </article>
+      </div>
+
+      <article class="panel">
+        <h3>Revenue by Region</h3>
+        <div class="bars" id="regionBars"></div>
+      </article>
+    </section>
+
+    <section id="table" class="orders-section">
+      <h2>Recent Orders</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date</th>
+              <th>Region</th>
+              <th>Product</th>
+              <th>Qty</th>
+              <th>Total</th>
+              <th>Salesperson</th>
+            </tr>
+          </thead>
+          <tbody id="ordersBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2>About This Project</h2>
+      <p>This dashboard is Project 1 of the DecodeLabs Full Stack Internship — a fully responsive frontend interface built with plain HTML, CSS, and JavaScript, no frameworks. It visualizes product sales data across regions, with mobile-first layout that adapts using CSS Grid, Flexbox, and media queries.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 SalesScope — DecodeLabs Internship Project 1</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
